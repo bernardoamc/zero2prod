@@ -1,0 +1,25 @@
+## Local Development Tips
+
+### Docker
+
+Building image: `docker build --tag zero2prod --file Dockerfile .`
+Running image: `docker run -p 8000:8000 zero2prod`
+
+#### On Mac?
+
+Instead of `localhost` use `host.docker.internal`
+
+### Testing
+
+`cargo test`
+
+### Digital Ocean
+
+Authorize client: `doctl auth init`
+List images: `doctl apps list`
+Create image: `doctl apps create --spec spec.yaml`
+Update App config: `doctl apps update <image-id> --spec=spec.yaml`
+
+### sqlx
+
+Prepare for offline mode: `cargo sqlx prepare -- --bin zero2prod`
